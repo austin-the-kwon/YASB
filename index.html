@@ -84,10 +84,9 @@
     <div class="math-center">
       \[
       \begin{aligned}
-        \Lambda \in \mathbb{C}^{h\times h} \\
+        \Lambda \in \mathbb{C}^{h\times h}\text{ (diagonal matrix)} \\
         P, Q \in \mathbb{C}^{h} \\
-        B \in \mathbb{C}^{h \times d} \\
-        C \in \mathbb{C}^{d \times h}
+        B, C \in \mathbb{C}^{h \times d}
       \end{aligned}
       \]
     </div>
@@ -97,8 +96,8 @@
       \[
       \begin{aligned}
         \tilde{A} = \Lambda - PQ^* \in \mathbb{C}^{h\times h} \\
-        \bar{A} = \left( I - \frac{\Delta}{2}\tilde{A}\right)^{-1}\left( I + \frac{\Delta}{2}\tilde{A}\right) \\
-        \tilde{C} = \left( I - \bar{A}^L \right)^*C \\
+        \bar{A} = \left( I - \frac{\Delta}{2}\tilde{A}\right)^{-1}\left( I + \frac{\Delta}{2}\tilde{A}\right) \in \mathbb{C}^{h\times h} \\
+        \tilde{C} = \left( I - \bar{A}^L \right)^*C \in \mathbb{C}^{h\times d} \\
         z_w = \text{exp}\left(-2\pi i \frac{w}{L}\right),\; w = 0,1,2,...,L-1 \\
         R_w = \left( \frac{2}{\Delta}\frac{1-z_w}{1+z_w}-\Lambda \right)^{-1} \in \mathbb{C}^{h\times h} \\
         \mathcal{K}_w = \frac{2}{1+z_w}\tilde{C}^*R_w\left(I-\frac{1}{1+\tilde{Q}R_w\tilde{P}}\tilde{P}\tilde{Q}^*R_w\right)B \in \mathbb{C}^{L\times d\times d} \\
