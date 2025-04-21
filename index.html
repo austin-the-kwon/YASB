@@ -37,10 +37,17 @@
       font-size: 1.8em;
     }
 
-    /* Left-align the math container */
+    /* Ensures math equations are left-aligned */
     .math-center {
-      text-align: left;   /* Left-align the equations */
+      display: block;  /* Make sure it's a block-level element */
       margin: 30px 0;
+      text-align: left; /* Left-align the equations */
+    }
+    
+    /* Style for each equation block */
+    .math-center blockquote {
+      margin-left: 0;
+      text-align: left;
     }
   </style>
 </head>
@@ -62,7 +69,7 @@
     data inputs, which is then used to evolve the system with linear operators.</p>
 
     <div class="math-center">
-      <!-- Use align environment for multiple equations with line breaks -->
+      <!-- MathJax aligned equations, left-aligned -->
       \[
       \begin{aligned}
         h_{k+1} &= Ah_k + Bx_k \\
@@ -74,7 +81,7 @@
     <p> Although many discretization methods exist, the Tustin discretization will be utilized for demonstration purposes. </p>
 
     <div class="math-center">
-      <!-- Use tag for custom numbering -->
+      <!-- Another set of equations -->
       \[
       \begin{aligned}
         \bar{A} = \left( I - \frac{\Delta}{2}\tilde{A}\right)^{-1}\left( I + \frac{\Delta}{2}\tilde{A}\right) \\
