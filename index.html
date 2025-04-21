@@ -102,11 +102,11 @@
       \begin{aligned}
         \hat{A} &= \Lambda - \hat{P}\hat{Q}^* \in \mathbb{C}^{h\times h} \\
         \bar{A} &= \left( I - \frac{\Delta}{2}\hat{A}\right)^{-1}\left( I + \frac{\Delta}{2}\hat{A}\right) \in \mathbb{C}^{h\times h} \\
-        \hat{C} &= \left( I - \bar{A}^L \right)^*C \in \mathbb{C}^{h\times d} \\
-        z_w &= \text{exp}\left(-2\pi i \frac{w}{L}\right) \in \mathbb{C}^{L\times 1},\; w = 0,1,2,...,L-1 \\
+        \hat{C} &= \left( I - \bar{A}^\ell \right)^*C \in \mathbb{C}^{h\times d} \\
+        z_w &= \text{exp}\left(-2\pi i \frac{w}{L}\right) \in \mathbb{C}^{\ell\times 1},\; w = 0,1,2,...,\ell-1 \\
         R_w &= \left( \frac{2}{\Delta}\frac{1-z_w}{1+z_w}-\Lambda \right)^{-1} \in \mathbb{C}^{h\times h} \\
-        \mathcal{K}_w &= \frac{2}{1+z_w}\hat{C}^*R_w\left(I-\frac{1}{1+\hat{Q}R_w\hat{P}}\hat{P}\hat{Q}^*R_w\right)B \in \mathbb{C}^{L\times d\times d} \\
-        \bar{K} &= \text{real}\left(\text{iFFT}\left(\mathcal{K_w},\text{ axis = 0}\right)\right) \in \mathbb{R}^{L\times d \times d}
+        \mathcal{K}_w &= \frac{2}{1+z_w}\hat{C}^*R_w\left(I-\frac{1}{1+\hat{Q}R_w\hat{P}}\hat{P}\hat{Q}^*R_w\right)B \in \mathbb{C}^{\ell\times d\times d} \\
+        \bar{K} &= \text{real}\left(\text{iFFT}\left(\mathcal{K_w},\text{ axis = 0}\right)\right) \in \mathbb{R}^{\ell\times d \times d}
       \end{aligned} 
       \]
     </div>
