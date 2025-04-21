@@ -84,9 +84,9 @@
     <div class="math-center">
       \[
       \begin{aligned}
-        \Lambda &\in \mathbb{C}^{h\times h}\text{ (diagonal matrix)} \\
-        P, Q &\in \mathbb{C}^{h \times 1} \\
-        B, C &\in \mathbb{C}^{h \times d}
+        &\Lambda \in \mathbb{C}^{h\times h}\text{ (diagonal matrix)} \\
+        &P, Q \in \mathbb{C}^{h \times 1} \\
+        &B, C \in \mathbb{C}^{h \times d}
       \end{aligned}
       \]
     </div>
@@ -101,8 +101,7 @@
         z_w &= \text{exp}\left(-2\pi i \frac{w}{L}\right) \in \mathbb{C}^{L\times 1},\; w = 0,1,2,...,L-1 \\
         R_w &= \left( \frac{2}{\Delta}\frac{1-z_w}{1+z_w}-\Lambda \right)^{-1} \in \mathbb{C}^{h\times h} \\
         \mathcal{K}_w &= \frac{2}{1+z_w}\tilde{C}^*R_w\left(I-\frac{1}{1+\tilde{Q}R_w\tilde{P}}\tilde{P}\tilde{Q}^*R_w\right)B \in \mathbb{C}^{L\times d\times d} \\
-        \bar{K} &= \text{real}\left(\text{iFFT}\left(\mathcal{K_w},\text{ axis = 0}\right)\right) \in \mathbb{R}^{L\times d \times d} \\
-        \tilde{y} = \bar{K} \ast x \in \mathbb{R}^{L\times d}
+        \bar{K} &= \text{real}\left(\text{iFFT}\left(\mathcal{K_w},\text{ axis = 0}\right)\right) \in \mathbb{R}^{L\times d \times d}
       \end{aligned} 
       \]
     </div>
