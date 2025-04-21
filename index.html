@@ -37,17 +37,20 @@
       font-size: 1.8em;
     }
 
-    /* Ensures math equations are left-aligned */
+    /* Ensure math equations are left-aligned */
     .math-center {
-      display: block;  /* Make sure it's a block-level element */
+      text-align: left; /* Left-align the entire block */
+      display: block;   /* Ensure it's treated as a block-level element */
       margin: 30px 0;
-      text-align: left; /* Left-align the equations */
     }
-    
-    /* Style for each equation block */
-    .math-center blockquote {
-      margin-left: 0;
-      text-align: left;
+
+    /* Additional specific targeting for MathJax rendered equations */
+    .mjx-chtml {
+      text-align: left !important; /* Force MathJax to align content left */
+    }
+
+    .mjx-math {
+      text-align: left !important; /* Ensure MathJax equations are left-aligned */
     }
   </style>
 </head>
@@ -86,8 +89,7 @@
       \begin{aligned}
         \bar{A} = \left( I - \frac{\Delta}{2}\tilde{A}\right)^{-1}\left( I + \frac{\Delta}{2}\tilde{A}\right) \\
         \tilde{C} = \left( I - \bar{A}^L \right)^*C \\
-        z_w = \text{exp}\left(-2\pi i \frac{w}{L}\right),\; w = 0,1,2,...,L-1 \\
-        \mathcal{K}_w = \frac{2}{1+z_w}\tilde{C}^*
+        z_w = \text{exp}\left(-2\pi i \frac{w}{L}\right),\; w = 0,1,2,...,L-1
       \end{aligned}
       \]
     </div>
