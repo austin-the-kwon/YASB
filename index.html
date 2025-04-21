@@ -84,10 +84,10 @@
     <div class="math-center">
       \[
       \begin{aligned}
-        \Lambda \in \mathbb{R}^{h\times h} \\
-        P, Q \in \mathbb{R}^{h} \\
-        B \in \mathbb{R}^{h \times d} \\
-        C \in \mathbb{R}^{d \times h}
+        \Lambda \in \mathbb{C}^{h\times h} \\
+        P, Q \in \mathbb{C}^{h} \\
+        B \in \mathbb{C}^{h \times d} \\
+        C \in \mathbb{C}^{d \times h}
       \end{aligned}
       \]
     </div>
@@ -101,8 +101,8 @@
         \tilde{C} = \left( I - \bar{A}^L \right)^*C \\
         z_w = \text{exp}\left(-2\pi i \frac{w}{L}\right),\; w = 0,1,2,...,L-1 \\
         R_w = \left( \frac{2}{\Delta}\frac{1-z_w}{1+z_w}-\Lambda \right)^{-1} \in \mathbb{C}^{h\times h} \\
-        \mathcal{K}_w = \frac{2}{1+z_w}\tilde{C}^*R_w\left(I-\frac{1}{1+\tilde{Q}R_w\tilde{P}}\tilde{P}\tilde{Q}^*R_w\right)B \in \mathbb{C}^{L,d,d} \\
-        \bar{K} = \text{real}\left(\text{iFFT}\left(\mathcal{K_w},\text{ axis = 0}\right)\right)
+        \mathcal{K}_w = \frac{2}{1+z_w}\tilde{C}^*R_w\left(I-\frac{1}{1+\tilde{Q}R_w\tilde{P}}\tilde{P}\tilde{Q}^*R_w\right)B \in \mathbb{C}^{L\times d\times d} \\
+        \bar{K} = \text{real}\left(\text{iFFT}\left(\mathcal{K_w},\text{ axis = 0}\right)\right) \in \mathbb{R}^{L\times d \times d}
       \end{aligned}
       \]
     </div>
