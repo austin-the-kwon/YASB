@@ -36,6 +36,12 @@
     h2 {
       font-size: 1.8em;
     }
+
+    /* Left-align the math container */
+    .math-center {
+      text-align: left;   /* Left-align the equations */
+      margin: 30px 0;
+    }
   </style>
 </head>
 <body>
@@ -53,29 +59,29 @@
   <article>
     <h2>Mathematical Background</h2>
     <p>The S4 architecture takes inspiration from the linear time invariant (LTI) dynamical system, where a hidden state is updated using
-    data inputs, which is then used to evolve the system with linear operators. </p>
+    data inputs, which is then used to evolve the system with linear operators.</p>
 
     <div class="math-center">
-    <!-- Use align environment for multiple equations with line breaks -->
-    \[
-    \begin{aligned}
-      h_{k+1} &= Ah_k + Bx_k \\
-      \hat{x}_{k+1} &= Ch_{k+1} + Dx_k
-    \end{aligned}
-    \]
+      <!-- Use align environment for multiple equations with line breaks -->
+      \[
+      \begin{aligned}
+        h_{k+1} &= Ah_k + Bx_k \\
+        \hat{x}_{k+1} &= Ch_{k+1} + Dx_k
+      \end{aligned}
+      \]
     </div>
 
     <p> Although many discretization methods exist, the Tustin discretization will be utilized for demonstration purposes. </p>
 
     <div class="math-center">
-    <!-- Use tag for custom numbering -->
-    \[
-    \begin{aligned}
-      \bar{A} = \left( I - \frac{\Delta}{2}\tilde{A}\right)^{-1}\left( I_{()} + \frac{\Delta}{2}\tilde{A}\right) \\
-      \tilde{C} = \left( I - \bar{A}^L \right)^*C \\
-      z_w = \text{exp}\left(-2\pi i \frac{w}{L}\right),\;w = 0,1,2,...,L-1
-    \end{aligned}
-    \]
+      <!-- Use tag for custom numbering -->
+      \[
+      \begin{aligned}
+        \bar{A} = \left( I - \frac{\Delta}{2}\tilde{A}\right)^{-1}\left( I + \frac{\Delta}{2}\tilde{A}\right) \\
+        \tilde{C} = \left( I - \bar{A}^L \right)^*C \\
+        z_w = \text{exp}\left(-2\pi i \frac{w}{L}\right),\; w = 0,1,2,...,L-1
+      \end{aligned}
+      \]
     </div>
   </article>
 
@@ -85,5 +91,4 @@
     to make a working S4 model.</p>
   </article>
 </body>
-
 </html>
