@@ -89,7 +89,9 @@
       \begin{aligned}
         \bar{A} = \left( I - \frac{\Delta}{2}\tilde{A}\right)^{-1}\left( I + \frac{\Delta}{2}\tilde{A}\right) \\
         \tilde{C} = \left( I - \bar{A}^L \right)^*C \\
-        z_w = \text{exp}\left(-2\pi i \frac{w}{L}\right),\; w = 0,1,2,...,L-1
+        z_w = \text{exp}\left(-2\pi i \frac{w}{L}\right),\; w = 0,1,2,...,L-1 \\
+        R_w = \left( \frac{2}{\Delta}\frac{1-z_w}{1+z_w}-\Lambda \right)^{-1} \\
+        \mathcal{K}_w = \frac{2}{1+z_w}\tilde{C}^*R_w\left(I-\frac{1}{1+\tilde{Q}R_w\tilde{P}}\tilde{P}\tilde{Q}^*R_w\right)B
       \end{aligned}
       \]
     </div>
