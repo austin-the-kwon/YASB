@@ -77,8 +77,8 @@
     in two sections: (1) mathematical background and (2) code implementation in Python and Pytorch. The target audience
     of this blog are those who are new to the S4 architecture and wish to learn how to implement it for research or other purposes.
     Though other tutorials and blogs exist (like <a href="https://srush.github.io/annotated-s4/" target="_blank">The Annotated S4</a>
-      by Gu, et. al) this blog will try to distinguish itself from the rest by making each explanation as explicit as possible to 
-    aid beginners and make the technical content more readily digestible. </p>
+    by A. Gu, K. Goel, and C. Ré) this blog will try to distinguish itself from the rest by making each step of the explanation as explicit as possible to 
+    make the technical content more readily digestible. </p>
   </article>
 
   <article>
@@ -108,6 +108,9 @@
         &\\
         h_3 &= Ah_2 + Bx_2 = A^2Bx_0 + ABx_1 + Bx_2\\
         \hat{x}_3 &= Ch_3 + Dx_2 = CA^2Bx_0  +CABx_1 + CBx_2 + Dx_2\\
+        &\\
+        h_4 &= Ah_3 + Bx_3 = A^3Bx_0 + A^2Bx_1 + ABx_2 + Bx_3\\
+        \hat{x}_4 &= Ch_4 + Dx_3 = CA^3Bx_0 + CA^2Bx_1  +CABx_2 + CBx_3 + Dx_3\\
       \end{aligned}
       \]
     </div>
