@@ -95,6 +95,19 @@
     <div class="math-center">
       \[
       \begin{aligned}
+        h_{k+1} &= Ah_k + Bx_k \\
+        \hat{x}_{k+1} &= Ch_{k+1} + Dx_k\\
+        &\\
+        h_1 &= Ah_0 + Bx_0 = Bx_0\\
+        \hat{x}_1 &= Ch_1 + Dx_0 = (CB + D)x_0
+      \end{aligned}
+      \]
+    </div>
+
+    <p>Dimensions for the parameters are as follows:</p>
+    <div class="math-center">
+      \[
+      \begin{aligned}
         &\Lambda \in \mathbb{C}^{h\times h}\text{ (diagonal matrix)} \\
         &P, Q \in \mathbb{C}^{h \times 1} \\
         &B, C \in \mathbb{C}^{h \times d}
