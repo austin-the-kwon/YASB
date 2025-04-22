@@ -75,7 +75,10 @@
     <p>The aim of this blog is to concisely aid those who wish to learn the basic mathematical background of 
     and to learn how to implement the Structured State Space for Sequence Modeling (S4) architecture. This will be done
     in two sections: (1) mathematical background and (2) code implementation in Python and Pytorch. The target audience
-    of this blog are </p>
+    of this blog are those who are new to the S4 architecture and wish to learn how to implement it for research or other purposes.
+    Though other tutorials and blogs exist (like <a href="https://srush.github.io/annotated-s4/" target="_blank">The Annotated S4</a>
+      by Gu, et. al) this blog will try to distinguish itself from the rest by making each explanation as explicit as possible to 
+    aid beginners and make the technical content more readily digestible. </p>
   </article>
 
   <article>
@@ -92,18 +95,19 @@
       \]
     </div>
 
-    <p>Dimensions for the parameters are as follows:</p>
+    <p>For a time-series prediction task, where a sequence of ground-truth state variables (\(x_i\))
+    is used to predict the next step (\(\hat{x}_{i+1}\))</p>
     <div class="math-center">
       \[
       \begin{aligned}
         h_1 &= Ah_0 + Bx_0 = Bx_0\\
-        \hat{x}_1 &= Ch_1 + Dx_0 = (CB + D)x_0\\
+        \hat{x}_1 &= Ch_1 + Dx_0 = CBx_0 + Dx_0\\
         &\\
         h_2 &= Ah_1 + Bx_1 = ABx_0 + Bx_1\\
-        \hat{x}_2 &= Ch_2 + Dx_1 = CABx_0 + (CB + D)x_1\\
+        \hat{x}_2 &= Ch_2 + Dx_1 = CABx_0 + CBx_1 + Dx_1\\
         &\\
         h_3 &= Ah_2 + Bx_2 = A^2Bx_0 + ABx_1 + Bx_2\\
-        \hat{x}_3 &= Ch_3 + Dx_2 = CA^2Bx_0  +CABx_1 + (CB + D)x_2\\
+        \hat{x}_3 &= Ch_3 + Dx_2 = CA^2Bx_0  +CABx_1 + CBx_2 + Dx_2\\
       \end{aligned}
       \]
     </div>
@@ -120,7 +124,7 @@
     </div>
 
     <p> Although many discretization methods exist, the Tustin discretization will be utilized for demonstration purposes. See below
-    for the pseudo code for obtaining the convolution kernels \(\bar{K}\). </p>
+    for the pseudo code for obtaining the convolution kernels (\(\bar{K}\)). </p>
     <div class="math-center">
       \[
       \begin{aligned}
