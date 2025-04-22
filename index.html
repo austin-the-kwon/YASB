@@ -96,7 +96,18 @@
     </div>
 
     <p>For a time-series prediction task, where a sequence of ground-truth state variables (\(x_n\))
-    is used to predict the next step (\(\hat{x}_{n+1}\))</p>
+    is used to predict the next step (\(\hat{x}_{n+1}\)) - ie. given ground truth variables from timestep 0 to n (\([x_0, x_1, ..., x_n]\)),
+    predict the value of the state variable at the next timestep (\(\hat{x}_{n+1}\)). The dimensionality of the ground truth and predicted state
+    variables and the hidden state (h) are depicted below:</p> 
+    <div class="math-center">
+      \[
+      \begin{aligned}
+        &x_j, \hat{x}_j \in \mathbb{R}^{d} \\
+        &h \in \mathbb{C}^{\mathit{h}}
+      \end{aligned}
+      \]
+    </div>
+    <p>Setting the hidden state at timestep = 0 shows</p>
     <div class="math-center">
       \[
       \begin{aligned}
@@ -120,9 +131,10 @@
     a formula:</p>
     <div class="math-center">
       \[
-      \hat{x}_{n+1} = \sum_{j=0}^{n}CA^{n-j}Bx_j
+      \hat{x}_{n+1} = \sum_{j=0}^{n}CA^{n-j}Bx_j + Dx_n
       \]
     </div>
+    Although recursively 
 
     <p>Dimensions for the parameters are as follows:</p>
     <div class="math-center">
