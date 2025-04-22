@@ -74,7 +74,8 @@
     <h2>Introduction</h2>
     <p>The aim of this blog is to concisely aid those who wish to learn the basic mathematical background of 
     and to learn how to implement the Structured State Space for Sequence Modeling (S4) architecture. This will be done
-    in two sections: (1) mathematical background and (2) code implementation in Python and Pytorch.</p>
+    in two sections: (1) mathematical background and (2) code implementation in Python and Pytorch. The target audience
+    of this blog are </p>
   </article>
 
   <article>
@@ -95,11 +96,14 @@
     <div class="math-center">
       \[
       \begin{aligned}
-        h_{k+1} &= Ah_k + Bx_k \\
-        \hat{x}_{k+1} &= Ch_{k+1} + Dx_k\\
-        &\\
         h_1 &= Ah_0 + Bx_0 = Bx_0\\
-        \hat{x}_1 &= Ch_1 + Dx_0 = (CB + D)x_0
+        \hat{x}_1 &= Ch_1 + Dx_0 = (CB + D)x_0\\
+        &\\
+        h_2 &= Ah_1 + Bx_1 = ABx_0 + Bx_1\\
+        \hat{x}_2 &= Ch_2 + Dx_1 = CABx_0 + (CB + D)x_1\\
+        &\\
+        h_3 &= Ah_2 + Bx_2 = A^2Bx_0 + ABx_1 + Bx_2\\
+        \hat{x}_3 &= Ch_3 + Dx_2 = CA^2Bx_0  +CABx_1 + (CB + D)x_2\\
       \end{aligned}
       \]
     </div>
