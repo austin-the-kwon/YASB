@@ -176,7 +176,8 @@
         &\;\;\;\;z[w] = \text{exp}\left(-2\pi i \frac{w}{L}\right) \in \mathbb{C},\;\;\left(z\in\mathbb{C}^{\ell \times 1}\right) \\
         &\;\;\;\;R[w] = \left( \frac{2}{\Delta}\frac{1-z[w]}{1+z[w]}I_{h\times h}-\Lambda \right)^{-1} \in \mathbb{C}^{h\times h}
           ,\;\;\left(R\in\mathbb{C}^{\ell \times h \times h}\right)  \\
-        &\;\;\;\;\mathcal{K}[w] = \frac{2}{1+z[w]}\tilde{C}^*R[w]\left[I_{h\times h} - P\left(I_{r\times r}+\hat{Q}^*R[w]P\right)^{\dagger}\hat{Q}^*R\right]\hat{B} 
+        &\;\;\;\;\text{if r = 1}:\\
+        &\;\;\;\;\;\;\;\;\mathcal{K}[w] = \frac{2}{1+z[w]}\tilde{C}^*R[w]\left[I_{h\times h} - P\left(I_{r\times r}+\hat{Q}^*R[w]P\right)^{\dagger}\hat{Q}^*R\right]\hat{B} 
           \in \mathbb{C}^{d\times d},\;\;\left(\mathcal{K}\in\mathbb{C}^{\ell\times d\times d}\right) \\
         &\bar{K} = \text{real}\left(\text{iFFT}\left(\mathcal{K},\text{ axis = 0}\right)\right) \in \mathbb{R}^{\ell\times d \times d}
       \end{aligned} 
