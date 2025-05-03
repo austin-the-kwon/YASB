@@ -179,7 +179,7 @@
         &\;\;\;\;\text{if r = 1}:\\
         &\;\;\;\;\;\;\;\;\mathcal{K}[w] = \frac{2}{1+z[w]}\tilde{C}^*R[w]\left(I_{h\times h}-\frac{1}{1+\hat{Q}^*R[w]\hat{P}}\hat{P}\hat{Q}^*R[w]\right)\hat{B}\in \mathbb{C}^{d\times d},\;\;\left(\mathcal{K}\in\mathbb{C}^{\ell\times d\times d}\right) \\
         &\;\;\;\;\text{else if r > 1}:\\
-        &\;\;\;\;\;\;\;\;\mathcal{K}[w] = \frac{2}{1+z[w]}\tilde{C}^*R[w]\left[I_{h\times h} - P\left(I_{r\times r}+\hat{Q}^*R[w]P\right)^{\dagger}\hat{Q}^*R[w]\right]\hat{B} 
+        &\;\;\;\;\;\;\;\;\mathcal{K}[w] = \frac{2}{1+z[w]}\tilde{C}^*R[w]\left[I_{h\times h} - \hat{P}\left(I_{r\times r}+\hat{Q}^*R[w]P\right)^{\dagger}\hat{Q}^*R[w]\right]\hat{B} 
           \in \mathbb{C}^{d\times d},\;\;\left(\mathcal{K}\in\mathbb{C}^{\ell\times d\times d}\right) \\
         &\bar{K} = \text{real}\left(\text{iFFT}\left(\mathcal{K},\text{ axis = 0}\right)\right) \in \mathbb{R}^{\ell\times d \times d}
       \end{aligned} 
