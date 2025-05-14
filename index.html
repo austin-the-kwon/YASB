@@ -283,6 +283,23 @@
     <div style="text-align: center;">
       <img src="Screenshot (26).png" alt="ODEN Logo" height="400">
     </div>
+
+    <p>On a separate occasion, if the user needs a specific A matrix to be applied (ie. not \(A = \Lambda-PQ^*/),
+    the \(\Lambda, P, Q\) matrices can be determined using the following method:</p>
+    <div class="math-center">
+      \[
+      \begin{aligned}
+        A &= I - (I-A)\\
+        U\Sigma V^* &= I-A #singular value decomposition
+        A &= I - U\Sigma V^*
+        &\text{let }P=U\Sigma, \Lambda=I\text{, and }Q = V
+        A &= \Lambda - PQ^*
+      \end{aligned}
+      \]
+    </div>
+    <p>Since SVD always exists, this formula can be followed to determine the matrices \(\Lambda,P,Q\)
+    when obtaining convolution kernels using the S4 method when A needs to be fixed at some arbitrary
+    value that the user needs.</p>
   </article>
 </body>
 
