@@ -239,7 +239,6 @@
   using the S4 and recursive methods to show they yield the same result.</p>
   <pre><code class="language-python">
     # determine convolution kernel using S4 method
-    
     start_time = time.time()
     Abar = np.linalg.pinv(Ih - step/2*A) @ (Ih + step/2*A)
     Ctilde = (Ih - np.linalg.matrix_power(Abar,L)).conj().T @ C
@@ -255,7 +254,7 @@
     K_conv = np.fft.ifft(K, axis=0).real
     print("kernel computation time (S4):",time.time() - start_time, "seconds")
 
-    # =================================================================================================
+    
     # determine convolution kernel using recursive method
     start_time = time.time()
     K_rec = np.zeros((L,1))
@@ -268,6 +267,22 @@
       K_rec[i] = (C.conj().T @ np.linalg.matrix_power(Ab, i) @ Bb).real
     print("kernel computation time (recursive):",time.time() - start_time, "seconds")
     </code></pre>
+    <p>To test whether the two different methods yielded the same convolution kernel, 
+    visual and numerical tests can be run.</p>
+    <pre><code class="language-python">
+    # similarity test between S4 and recursive kernels
+    print("S4 kernel:")
+    print(K_conv)
+    print("\nrecursive kernel:")
+    print(K_rec)
+    if np.allclose(K_conv, K_rec, atol = 1e-4):
+      print("\nS4 and recursive kernels are similar to each other within the set tolerance")
+    </code></pre>
+    <p>The reader is encouraged to test and play around with the code, but to clear any doubts,
+    the output of the similarity test is shown below:</p>
+    <div style="text-align: center;">
+      <img src="Screenshot (26).png" alt="ODEN Logo" height="250">
+    </div>
   </article>
 </body>
 
