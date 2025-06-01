@@ -87,9 +87,11 @@
 
   <article>
     <h2>Mathematical Background</h2>
-    <p>The S4 architecture takes inspiration from the linear time invariant (LTI) dynamical system, where a hidden state is updated using
-    data inputs, which is then used to evolve the system with linear operators.</p>
-
+    <p>
+      The S4 architecture takes inspiration from the state space model 
+      which are a fundamental framework in modeling linear time invariant (LTI) systems, where a hidden state is updated using
+      data inputs, which is then used to evolve the system with linear operators.
+    </p>
     <div class="math-center">
       \[
       \begin{aligned}
@@ -99,10 +101,13 @@
       \]
     </div>
 
-    <p>For a time-series prediction task, where a sequence of ground-truth state variables (\(x_n\))
-    is used to predict the next step (\(\hat{x}_{n+1}\)) - ie. given ground truth variables from timestep 0 to n (\([x_0, x_1, ..., x_n]\)),
-    predict the value of the state variable at the next timestep (\(\hat{x}_{n+1}\)). The dimensionality of the ground truth and predicted state
-    variables and the hidden state (h) are depicted below:</p> 
+    <p>
+      For applications in a time-series prediction task, a sequence of ground-truth state variables \([x_0,...,x_n]\) 
+      can be given as input to the S4 model to output a one-step shifted sequence of predicted state variables
+      \([\hat{x}_1,...,\hat{x}_{n+1}]\) - here the subscript indicates the time step index and the hat notation indicates
+      that the variable is a model prediction. 
+      The state variable at each time step has dimension d, and the hidden state has dimension h.
+    </p> 
     <div class="math-center">
       \[
       \begin{aligned}
@@ -111,7 +116,9 @@
       \end{aligned}
       \]
     </div>
-    <p>Setting the hidden state at timestep = 0 shows</p>
+    <p>
+      Setting the hidden state at timestep = 0 shows
+    </p>
     <div class="math-center">
       \[
       \begin{aligned}
@@ -308,8 +315,8 @@
     <p> 
       My name is Austin Kwon. I am a Computational Science, Engineering, and Mathematics PhD student at 
       the <a href = "https://oden.utexas.edu/" target = "_black">Oden Institute</a> at the University of Texas at Austin. 
-      I am currently being advised by Professor 
-      <a href = "https://dellmed.utexas.edu/directory/charles-taylor" target = "_black">Charles A. Taylor</a> 
+      I am advised by Professor 
+      <a href = "https://dellmed.utexas.edu/directory/charles-taylor" target = "_black">Charles A. Taylor</a>, and  
       I received my BS in Aerospace and Mechanical Engineering at Rensselaer Polytechnic Institute in 2024.
       Any questions can be directed at austin.kwon@utexas.edu.
     </p>
