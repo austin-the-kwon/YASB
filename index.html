@@ -104,20 +104,20 @@
     <p>
       For applications in a time-series prediction task, a sequence of ground-truth state variables \([x_0,...,x_n]\) 
       can be given as input to the S4 model to output a one-step shifted sequence of predicted state variables
-      \([\hat{x}_1,...,\hat{x}_{n+1}]\) - here the subscript indicates the time step index and the hat notation indicates
+      \([\hat{x}_1,...,\hat{x}_{n+1}]\). The subscript indicates the time step index and the hat notation indicates
       that the variable is a model prediction. 
       The state variable at each time step has dimension d, and the hidden state has dimension h.
     </p> 
     <div class="math-center">
       \[
       \begin{aligned}
-        &x_j, \hat{x}_j \in \mathbb{R}^{d} \\
-        &h \in \mathbb{R}^{\symcal{h}}
+        &x_t, \hat{x}_t \in \mathbb{R}^{d} \\
+        &h_t \in \mathbb{R}^{\symcal{h}}
       \end{aligned}
       \]
     </div>
     <p>
-      Setting the hidden state at timestep = 0 shows
+      Setting the hidden state at timestep t = 0 shows
     </p>
     <div class="math-center">
       \[
@@ -145,13 +145,16 @@
       \hat{x}_{n+1} = \sum_{j=0}^{n}CA^{n-j}Bx_j + Dx_n
       \]
     </div>
-    <p>For various purposes, let A be the sum of a normal matrix (a matrix that can be expressed as 
-      \(V\Lambda V^*\) where V is a unitary matrix, \(VV^*=V^*V=I\), and \(\Lambda\) is a diagonal matrix) and
-      a low rank matrix (an outer product of two low rank matrices): \(A = V\Lambda V^*-PQ^*\), ie. a normal plus
-      low-rank (NPLR) matrix. Upon a unitary transformation (multiplication by a unitary matrix and its conjugate transpose on either side), 
-      this NPLR matrix can be converted to a diagonal plus low-rank (DPLR) matrix. This is done because further mathematical 
-      simplifications can be done when the A matrix is DPLR.</p>
-
+    <p>
+      A key technical contribution of the S4 paper by Gu et. al, is setting the A matrix 
+      as a HiPPO matrix and characterizing this matrix as a diagonal plus low rank (NPLR) 
+      matrix (under unitary transformation) to simplify calculations for efficient computation.
+      A normal matrix can be expressed as \(V\Lambda V^*\) where V is a unitary matrix, \(VV^*=V^*V=I\), 
+      and \(\Lambda\) is a diagonal matrix. 
+      To obtain a low rank matrix, one can take an outer product of two low rank matrices.
+      Upon a unitary transformation (multiplication by a unitary matrix and its conjugate transpose on either side), 
+      an NPLR matrix can be converted to a diagonal plus low-rank (DPLR) matrix.
+    </p>
     <div class="math-center">
       \[
       \begin{aligned}
